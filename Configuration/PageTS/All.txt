@@ -1,0 +1,7 @@
+#
+# PageTS for Bigga Site
+#
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bigga_site/Configuration/PageTS/RTE.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bigga_site/Configuration/PageTS/TCEFORM.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bigga_site/Configuration/PageTS/TCEMAIN.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bigga_site/Configuration/PageTS/Mod/WebLayout/BackendLayouts.txt">
