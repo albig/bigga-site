@@ -1,0 +1,54 @@
+##################################################
+### CONTENT ELEMENT SETTINGS                   ###
+### Shared settings for TYPO3 content elements ###
+##################################################
+lib.contentElement {
+
+    ################
+    ### SETTINGS ###
+    ################
+    settings {
+        header {
+            defaultHeaderType = {$page.header.defaultHeaderType}
+            class = {$page.header.class}
+        }
+        subheader {
+            class = {$page.subheader.class}
+        }
+        preload {
+            images = {$page.preload.images}
+        }
+        lightbox {
+            cssClass = {$page.lightbox.cssClass}
+            prefix = {$page.lightbox.prefix}
+        }
+        gallery {
+            columnClass {
+                1 = {$page.gallery.columnClass.1}
+                2 = {$page.gallery.columnClass.2}
+                3 = {$page.gallery.columnClass.3}
+                4 = {$page.gallery.columnClass.4}
+                6 = {$page.gallery.columnClass.6}
+            }
+        }
+        menuthumbnail {
+            media {
+                height = {$page.menu_thumbnail.media.height}
+                width = {$page.menu_thumbnail.media.width}
+            }
+            title {
+                crop = {$page.menu_thumbnail.title.crop}
+            }
+            abstract {
+                crop = {$page.menu_thumbnail.abstract.crop}
+            }
+        }
+        uploads {
+            preview {
+                height = {$page.uploads.preview.height}
+                width = {$page.uploads.preview.width}
+            }
+        }
+    }
+
+}

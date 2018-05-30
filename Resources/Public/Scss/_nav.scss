@@ -1,0 +1,23 @@
+.nav ul {
+  list-style-type: none;
+}
+
+//
+// Pills
+//
+
+.nav-pills {
+  .nav-link {
+    @include border-radius($nav-pills-border-radius);
+  }
+
+  .nav-link.active,
+  .show > .nav-link {
+    color: $nav-pills-link-active-color;
+    background-color: $nav-pills-link-active-bg;
+  }
+
+  .nav-link {
+    background-color: $pagination-hover-bg;
+  }
+}

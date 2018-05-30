@@ -13,7 +13,14 @@ call_user_func(function()
      */
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
         $extensionKey,
-        'Configuration/TypoScript',
-        'Bigga Site'
+        'Configuration/TypoScript/Doris',
+        'doris-bigga.de'
     );
+
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
+        $extensionKey,
+        'Configuration/TypoScript/Bigga',
+        'bigga.de'
+    );
+
 });

@@ -1,0 +1,134 @@
+
+plugin.tx_news {
+    view {
+        # Additional template paths
+        #templateRootPaths.110 = EXT:bigga_site/Resources/Private/Plugins/News/Templates/
+        # Additional partial paths
+        partialRootPaths.110 = EXT:bigga_site/Resources/Private/Plugins/News/Partials/
+
+        # Different template for pagination
+        widget.GeorgRinger\News\ViewHelpers\Widget\PaginateViewHelper.templateRootPath = EXT:bigga_site/Resources/Private/Plugins/News/Templates/
+    }
+
+    features.skipDefaultArguments = 1
+
+    settings {
+        # remove default css (if used with predef news templates)
+        #cssFile >
+
+        #defaultDetailPid = 0
+        #cropMaxCharacters = 150
+
+        # don't use/show dummy image
+        displayDummyIfNoMedia = 0
+
+        media {
+            maxWidth = 155
+            maxHeight = 155
+        }
+
+        link {
+            skipControllerAndAction = 1
+            hrDate = 0
+            hrDate {
+                  day = j
+                  month = m
+                  year = Y
+            }
+        }
+
+        # list view
+        list {
+            media {
+                image {
+                    maxWidth = 100
+                    maxHeight = 100
+                }
+                #dummyImage = typo3conf/ext/news/Resources/Public/Images/dummy-preview-image.png
+            }
+            paginate {
+                itemsPerPage = 10
+                insertAbove = 1
+                insertBelow = 1
+                # add next/prev links in header (for screen reader?)
+                prevNextHeaderTags = 1
+                maximumNumberOfLinks = 4
+            }
+        }
+
+        # detail view
+        detail {
+            media {
+                image {
+                    lightbox {
+                      enabled = 1
+                      class = lightbox
+                      width = 1024
+                      height = 768
+                      rel = lightbox-group
+                    }
+                    maxWidth = 283
+                    maxHeight = 200
+                }
+                video {
+                    #width = 282
+                    #height = 300
+                }
+            }
+            # don't use/show fb & twitter sharing plugins
+            showSocialShareButtons = 0
+            errorHandling = redirectToPage,1,404
+            #errorHandling = pageNotFoundHandler
+        }
+
+        # deactivate analytics for sharing
+        analytics {
+            social {
+                facebookLike = 0
+                facebookShare = 0
+                twitter = 0
+            }
+        }
+    }
+
+    _LOCAL_LANG {
+        default {
+            related-links = Links
+            related-files = Files
+            #dateFormat = %m/%d/%Y
+            #more-link = Read more
+            #back-link = Back
+
+            #list_nonewsfound = No news available.
+
+            #paginate_overall = Page %s of %s.
+            #paginate_next = Next
+            #paginate_previous = Previous
+
+            #categories = Categories
+            #tags = Tags
+
+            # --- Additional labels ---
+            #search = Search
+        }
+        de {
+            related-links = Links
+            related-files = Dateien
+            #dateFormat = %d.%m.%Y
+            #more-link = mehr
+            #back-link = zurück
+
+            #list_nonewsfound = Keine Artikel vorhanden.
+
+            #paginate_overall = Seite %s von %s.
+            #paginate_next = Nächste
+            #paginate_previous = Vorherige
+
+            #categories = Kategorien
+            #tags = Tags
+
+            # --- Additional labels ---
+            #search = Suchen
+        }
+    }
+}

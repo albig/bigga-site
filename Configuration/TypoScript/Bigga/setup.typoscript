@@ -7,7 +7,9 @@
 ################
 #### HELPER ####
 ################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bigga_site/Configuration/TypoScript/Helper/ContentElement.typoscript">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bigga_site/Configuration/TypoScript/Helper/DynamicContent.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bigga_site/Configuration/TypoScript/Plugins/news.typoscript">
 
 
 ##############
@@ -70,7 +72,39 @@ page {
                 includeSpacer = 1
                 as = mainnavigation
             }
+            30 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            30 {
+                entryLevel = 0
+                levels = 2
+                expandAll = 1
+                includeSpacer = 0
+                as = subnavigation
+            }
         }
+
+        settings {
+            logo {
+                file = EXT:bigga_site/Resources/Public/Images/Logo/aromalogo3.png
+                #fileInverted = {$page.logo.fileInverted}
+                #height = {$page.logo.height}
+                #width = {$page.logo.width}
+                linktitle = Logo Doris Bigga Aromatherapie
+            }
+            logo2 {
+                file = EXT:bigga_site/Resources/Public/Images/Logo/provence_2007_093_crop_trans.jpg
+                #fileInverted = {$page.logo.fileInverted}
+                #height = {$page.logo.height}
+                #width = {$page.logo.width}
+                #linktitle = Logo Doris Bigga Aromatherapie
+            }
+        }
+
+
+        variables {
+            rootPage = TEXT
+            rootPage.data = leveluid:0
+        }
+
     }
 
     meta {
@@ -140,11 +174,12 @@ page {
     }
 
     includeCSSLibs {
-
+      #  bootstrapcdn = https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css
+      #  bootstrapcdn.external = 1
     }
 
     includeCSS {
-        bigga_site_layout = EXT:bigga_site/Resources/Public/Css/layout.min.css
+        bigga_site_layout = EXT:bigga_site/Resources/Public/Css/layout.css
     }
 
     includeJSLibs {
@@ -156,6 +191,26 @@ page {
     }
 
     includeJSFooterlibs {
+        cdnjquery = https://code.jquery.com/jquery-3.3.1.slim.min.js
+        cdnjquery.external = 1
+        cdnjquery.integrity = sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo
+        cdnjquery.forceOnTop = 1
+
+        responsiveimages = EXT:bigga_site/Resources/Public/JavaScript/Dist/jquery.responsiveimages.min.js
+
+        cdnpopper = https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js
+        cdnpopper.external = 1
+        cdnpopper.integrity = sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49
+
+        cdnbootstrap = https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js
+        cdnbootstrap.external = 1
+        cdnbootstrap.integrity = sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T
+
+        photoswipe_core = EXT:bigga_site/Resources/Public/JavaScript/Libs/photoswipe.min.js
+        photoswipe_ui = EXT:bigga_site/Resources/Public/JavaScript/Libs/photoswipe-ui-default.min.js
+
+        #### Basic lightbox implementation for bootstrap
+        bootstrap_lightbox = EXT:bigga_site/Resources/Public/JavaScript/Dist/bootstrap.lightbox.min.js
 
     }
 

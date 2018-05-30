@@ -1,0 +1,23 @@
+// Variables
+@import 'variables';
+
+// Modules
+// import your modules here
+@import 'dropdown';
+@import 'nav';
+@import 'photoswipe';
+@import 'photoswipe-default-skin';
+@import 'gallery';
+
+header {
+  padding: 20px 0;
+}
+
+footer {
+  margin: 20px 0;
+}
+
+footer .container .row {
+  padding: 10px 0;
+  border-top: 1px dotted $border-color;
+}

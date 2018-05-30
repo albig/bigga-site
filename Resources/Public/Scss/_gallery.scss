@@ -1,0 +1,43 @@
+//
+// Gallery
+// --------------------------------------------------
+.gallery-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -0.5em;
+    margin-right: -0.5em;
+    padding: 1em 0;
+}
+.frame > .gallery-row:last-child {
+    margin-bottom: -1em;
+}
+.gallery-item {
+    float: none;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+
+//
+// Figures
+// --------------------------------------------------
+figure {
+    display: block;
+    margin-bottom: 1em;
+    line-height: 1.55em;
+    > img,
+    a > img {
+        display: block;
+        height: auto;
+        max-width: 100%;
+        margin: 0 auto;
+        &.img-rounded {
+            border-radius: 6px;
+        }
+    }
+    .caption {
+        padding-top: 0.5em;
+        font-size: 0.85em;
+        line-height: 1.4em;
+    }
+}
