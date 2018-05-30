@@ -90,12 +90,8 @@ page {
                 #width = {$page.logo.width}
                 linktitle = Logo Doris Bigga Aromatherapie
             }
-            logo2 {
-                file = EXT:bigga_site/Resources/Public/Images/Logo/provence_2007_093_crop_trans.jpg
-                #fileInverted = {$page.logo.fileInverted}
-                #height = {$page.logo.height}
-                #width = {$page.logo.width}
-                #linktitle = Logo Doris Bigga Aromatherapie
+            matomo {
+                idSite = {$page.matomo.idSite}
             }
         }
 

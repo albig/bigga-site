@@ -60,6 +60,10 @@ page {
             6 = col-md-2 col-sm-3 col-xs-4
         }
     }
+    matomo {
+        # cat=bigga_site: advanced/147/100; type=int; label=Matomo Id Site
+        idSite = 9
+    }
 }
 
 
