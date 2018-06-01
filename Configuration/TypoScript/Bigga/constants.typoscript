@@ -22,7 +22,7 @@ styles {
 page {
      fluidtemplate {
         layoutRootPath = EXT:bigga_site/Resources/Private/Layouts/Page/
-        partialRootPath = EXT:bigga_site/Resources/Private/Partials/Page/
+        partialRootPath = EXT:bigga_site/Resources/Private/Partials/Bigga/
         templateRootPath = EXT:bigga_site/Resources/Private/Templates/Page/
     }
     meta {

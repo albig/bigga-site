@@ -76,7 +76,7 @@ page {
             30 {
                 entryLevel = 0
                 levels = 2
-                expandAll = 1
+                expandAll = 0
                 includeSpacer = 0
                 as = subnavigation
             }
