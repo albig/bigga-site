@@ -77,8 +77,8 @@ plugin.tx_news {
             }
             # don't use/show fb & twitter sharing plugins
             showSocialShareButtons = 0
-            errorHandling = redirectToPage,1,404
-            #errorHandling = pageNotFoundHandler
+            #errorHandling = redirectToPage,1,404
+            errorHandling = pageNotFoundHandler
         }
 
         # deactivate analytics for sharing

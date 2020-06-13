@@ -34,7 +34,7 @@ editor:
             - justify
 
         removePlugins:
-#            - image
+            - image
 
         removeButtons:
             - Anchor
