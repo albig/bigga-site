@@ -28,7 +28,8 @@ plugin.tx_news {
         }
 
         link {
-            skipControllerAndAction = 1
+            # do not activate the following with slugs routeEnhancers!
+            # skipControllerAndAction = 1
             hrDate = 0
             hrDate {
                   day = j
@@ -78,7 +79,7 @@ plugin.tx_news {
             # don't use/show fb & twitter sharing plugins
             showSocialShareButtons = 0
             #errorHandling = redirectToPage,1,404
-            errorHandling = pageNotFoundHandler
+            #errorHandling = pageNotFoundHandler
         }
 
         # deactivate analytics for sharing
