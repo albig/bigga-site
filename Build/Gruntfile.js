@@ -1,5 +1,7 @@
 module.exports = function(grunt) {
 
+    const sass = require('node-sass');
+
     /**
      * Project configuration.
      */
@@ -19,29 +21,28 @@ module.exports = function(grunt) {
             ' * Copyright 2017-<%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' +
             ' * Licensed under the <%= pkg.license %> license\n' +
             ' */\n',
-        uglify: {
-            all: {
-                options: {
-                    banner: '<%= banner %>',
-                    mangle: true,
-                    compress: true,
-                    beautify: false
-                },
-                files: {
-                    "<%= paths.js %>/Dist/scripts.js": [
-                        "<%= paths.js %>Src/main.js"
-                    ],
-                    "<%= paths.js %>/Dist/bootstrap.lightbox.min.js": [
-                        "<%= paths.js %>Src/bootstrap.lightbox.js"
-                    ],
-                    "<%= paths.js %>/Dist/jquery.responsiveimages.min.js": [
-                        "<%= paths.js %>Src/jquery.responsiveimages.js"
-                    ]
+        terser: {
+            options: {
+                compress: true,
+                output: {
+                    comments: false
                 }
+            },
+            files: {
+                "<%= paths.js %>/Dist/scripts.js": [
+                    "<%= paths.js %>Src/main.js"
+                ],
+                "<%= paths.js %>/Dist/bootstrap.lightbox.min.js": [
+                    "<%= paths.js %>Src/bootstrap.lightbox.js"
+                ],
+                "<%= paths.js %>/Dist/jquery.responsiveimages.min.js": [
+                    "<%= paths.js %>Src/jquery.responsiveimages.js"
+                ]
             }
         },
         sass: {
             options: {
+                implementation: sass,
                 sourceMap: true
             },
             dist: {
@@ -57,8 +58,7 @@ module.exports = function(grunt) {
                     require('autoprefixer')({
                         browsers: [
                             'Last 2 versions',
-                            'Firefox ESR',
-                            'IE 9'
+                            'Firefox ESR'
                         ]
                     })
                 ]
@@ -107,18 +107,18 @@ module.exports = function(grunt) {
     /**
      * Register tasks
      */
-    grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-image');
+    grunt.loadNpmTasks('grunt-terser');
 
     /**
      * Grunt update task
      */
     grunt.registerTask('css', ['sass', 'postcss', 'cssmin']);
-    grunt.registerTask('js', ['uglify']);
+    grunt.registerTask('js', ['terser']);
     grunt.registerTask('build', ['js', 'sass', 'css', 'image']);
     grunt.registerTask('default', ['build']);
 
