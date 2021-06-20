@@ -2,18 +2,21 @@
     "name": "bigga/bigga-site",
     "type": "typo3-cms-extension",
     "description": "",
-    "homepage": "http://www.bigga.de/",
-    "license": ["GPL-2.0-or-later"],
+    "homepage": "https://www.bigga.de/",
     "keywords": ["TYPO3 CMS"],
     "version": "1.0.0",
     "require": {
-        "typo3/cms-core": "^8.7 || ^9.0",
-        "typo3/cms-rte-ckeditor": "^8.7 || ^9.0",
-        "typo3/cms-fluid-styled-content": "^8.7 || ^9.0"
+        "typo3/cms-core": "^9.5 || ^10.4"
     },
+    "license": "GPL-3.0-or-later",
     "autoload": {
         "psr-4": {
             "Bigga\\BiggaSite\\": "Classes/"
         }
+    },
+    "extra": {
+      "typo3/cms": {
+        "extension-key": "bigga_site"
+      }
     }
 }
