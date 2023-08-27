@@ -13,6 +13,13 @@
     background-color: $pagination-bg;
     border: $pagination-border-width solid $pagination-border-color;
 
+    &.current {
+      z-index: 2; // Place active items above their siblings for proper border styling
+      color: $pagination-active-color;
+      background-color: $pagination-active-bg;
+      border-color: $pagination-active-border-color;
+    }
+
     &:hover {
       z-index: 2;
       color: $pagination-hover-color;
