@@ -17,10 +17,4 @@ call_user_func(function()
         'doris-bigga.de'
     );
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
-        $extensionKey,
-        'Configuration/TypoScript/Bigga',
-        'bigga.de'
-    );
-
 });
