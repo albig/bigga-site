@@ -5,9 +5,6 @@ plugin.tx_news {
         #templateRootPaths.110 = EXT:bigga_site/Resources/Private/Plugins/News/Templates/
         # Additional partial paths
         partialRootPaths.110 = EXT:bigga_site/Resources/Private/Plugins/News/Partials/
-
-        # Different template for pagination
-        widget.GeorgRinger\News\ViewHelpers\Widget\PaginateViewHelper.templateRootPath = EXT:bigga_site/Resources/Private/Plugins/News/Templates/
     }
 
     features.skipDefaultArguments = 1
